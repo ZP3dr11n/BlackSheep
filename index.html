@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BlackSheep | Suíte de Ferramentas PDF</title>
 
-  <link rel="icon" href="data:image/svg+xml,<svg width='32' height='32' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='12' fill='%232563eb'/><path d='M18.5 10a3.5 3.5 0 0 0-3.44-2.99A4.5 4.5 0 0 0 6 9a3.5 3.5 0 0 0-.5 6.96V17a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3v-1.04A3.5 3.5 0 0 0 18.5 10ZM8 18a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z' fill='%23000'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg width='32' height='32' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='12' fill='%236d28d9'/><path d='M18.5 10a3.5 3.5 0 0 0-3.44-2.99A4.5 4.5 0 0 0 6 9a3.5 3.5 0 0 0-.5 6.96V17a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3v-1.04A3.5 3.5 0 0 0 18.5 10ZM8 18a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z' fill='%23000'/></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -20,9 +20,7 @@
        CSS UNIFICADO (Com Sistema de Tema)
        ==================================================================== */
     :root {
-      /* TEMA ESCURO (PADRÃO)
-        Definimos nomes semânticos para as variáveis.
-      */
+      /* TEMA ESCURO (PADRÃO) */
       --bg-gradient: radial-gradient(circle at top, #0f172a 0%, #0b0f1c 100%);
       --bg-primary: #0b0f1c;
       --bg-secondary: #12182a;
@@ -32,30 +30,32 @@
       --bg-handle: rgba(255, 255, 255, 0.02);
 
       --border-primary: #334155;
-      --border-header: #1e3a8a;
-
+      
       --text-primary: #f1f5f9;
       --text-secondary: #94a3b8;
       --text-on-accent: #ffffff;
-
-      /* Variáveis de Acento (podem ser as mesmas para ambos os temas) */
-      --accent: #2563eb;
-      --accent-glow: #3b82f6;
+      
+      /* ↓↓↓ PALETA DE CORES ATUALIZADA (ROXO) ↓↓↓
+      */
+      --border-header: #4c1d95; /* Roxo bem escuro (para borda/sombra) */
+      
+      /* Variáveis de Acento */
+      --accent: #6d28d9; /* Roxo "Eggplant" principal */
+      --accent-glow: #7c3aed; /* Roxo um pouco mais claro (para hover) */
       --radius: 16px;
-      --shadow-cartoon: 0 6px 0 #1e3a8a;
-      --shadow-soft: 0 4px 20px rgba(37,99,235,0.25);
+      --shadow-cartoon: 0 6px 0 #4c1d95; /* Roxo bem escuro */
+      --shadow-soft: 0 4px 20px rgba(109, 40, 217, 0.25); /* Roxo principal com transparência */
+      /* ↑↑↑ PALETA DE CORES ATUALIZADA (ROXO) ↑↑↑ */
     }
     
     html[data-theme="light"] {
-      /* TEMA CLARO
-        Sobrescrevemos as variáveis quando o tema claro está ativo.
-      */
-      --bg-gradient: #f1f5f9; /* Fundo sólido para o tema claro */
+      /* TEMA CLARO */
+      --bg-gradient: #f1f5f9; 
       --bg-primary: #f8fafc;
       --bg-secondary: #ffffff;
       --bg-input: #e2e8f0;
       --bg-header: rgba(255,255,255,0.9);
-      --bg-drop-drag: rgba(37, 99, 235, 0.05);
+      --bg-drop-drag: rgba(37, 99, 235, 0.05); /* (Ajustado p/ roxo) */
       --bg-handle: #e2e8f0;
 
       --border-primary: #cbd5e1;
@@ -64,8 +64,6 @@
       --text-primary: #0f172a;
       --text-secondary: #475569;
       --text-on-accent: #ffffff;
-      
-      /* Sombras podem precisar de ajuste, mas as atuais funcionam bem */
     }
 
 
@@ -74,7 +72,6 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      /* Aplicando as variáveis de tema */
       background: var(--bg-gradient);
       color: var(--text-primary);
       min-height: 100vh;
@@ -114,7 +111,6 @@
       box-shadow: var(--shadow-cartoon);
       animation: jump 2s ease-in-out infinite;
     }
-    /* fill: #000; (preenchimento da ovelha) foi mantido */
     .sheep-logo svg { width: 24px; height: 24px; fill: #000; } 
 
     @keyframes jump {
@@ -157,7 +153,7 @@
     .hub-nav-button.active {
       background: var(--accent-glow);
       color: var(--text-on-accent);
-      border-color: #60a5fa;
+      border-color: #a78bfa; /* Tom de roxo mais claro para a borda ativa */
     }
 
     /* ====== CONTAINER (Lógica de Navegação do v2 + Animação do Exemplo) ====== */
@@ -226,7 +222,7 @@
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 8px rgba(37,99,235,0.5);
+      box-shadow: 0 0 8px rgba(109, 40, 217, 0.5); /* Sombra de foco roxa */
     }
     
     a { color: var(--accent-glow); text-decoration: none; }
@@ -291,7 +287,7 @@
       box-shadow: none;
     }
     button.secondary:hover:not(:disabled) {
-      background: #475569; /* (Mantido, pois é um hover específico) */
+      background: #475569; 
       transform: scale(1.05);
     }
     
@@ -324,7 +320,7 @@
       gap: 12px;
       padding: 12px;
       border-radius: 10px;
-      background: var(--bg-primary); /* Mais escuro/claro que o card */
+      background: var(--bg-primary); 
       border: 1px solid var(--border-primary);
     }
     .file-meta { flex: 1; }
@@ -392,7 +388,7 @@
     .progress-wrap { margin-top: 12px; }
     progress { width: 100%; height: 12px; border-radius: 8px; }
     .progress-bar-wrap { height: 8px; background: var(--bg-input); border-radius: 8px; overflow: hidden; }
-    .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #1e40af); width: 0; }
+    .progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5b21b6); width: 0; } /* Gradiente roxo */
     
     /* Ajuste final na ferramenta 3 */
     #tool-pdf-images .hint {
@@ -578,7 +574,7 @@
   <script>
     (function() {
       
-      // --- LÓGICA DE TEMA (CLARO/ESCURO) ADICIONADA AQUI ---
+      // --- LÓGICA DE TEMA (CLARO/ESCURO) ---
       try {
         const themeToggle = document.getElementById('theme-toggle');
         const osPreference = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
@@ -595,7 +591,6 @@
         }
       
         themeToggle.addEventListener('click', () => {
-          // Pega o tema ATUAL do atributo HTML, que é a fonte da verdade
           const currentTheme = document.documentElement.getAttribute('data-theme') || osPreference;
           const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
           setTheme(newTheme);
@@ -614,7 +609,7 @@
       // --- FIM DA LÓGICA DE TEMA ---
       
 
-      // --- LÓGICA DE NAVEGAÇÃO DO HUB (Original) ---
+      // --- LÓGICA DE NAVEGAÇÃO DO HUB ---
       const navButtons = document.querySelectorAll('.hub-nav-button');
       const toolContents = document.querySelectorAll('.tool-content');
       
@@ -639,7 +634,8 @@
           try {
             toolInitializers[targetId]();
             initializedTools.add(targetId);
-          } catch (err) {
+          } catch (err)
+ {
             console.error(`Falha ao inicializar a ferramenta: ${targetId}`, err);
             alert(`Ocorreu um erro ao carregar esta ferramenta: ${err.message}`);
           }
@@ -652,7 +648,7 @@
         });
       });
 
-      // --- INICIALIZADOR FERRAMENTA 1 (merge_two_pdfs) (Original) ---
+      // --- INICIALIZADOR FERRAMENTA 1 (merge_two_pdfs) ---
       function initToolMergePdf() {
         const container = document.getElementById('tool-merge-pdf');
         
@@ -814,7 +810,7 @@
       }
 
 
-      // --- INICIALIZADOR FERRAMENTA 2 (Criador de pdf) (Original) ---
+      // --- INICIALIZADOR FERRAMENTA 2 (Criador de pdf) ---
       function initToolImagesPdf() {
         (function(container){
           const { jsPDF } = window.jspdf;
@@ -940,7 +936,7 @@
       }
 
 
-      // --- INICIALIZADOR FERRAMENTA 3 (CheckList.html) (Original) ---
+      // --- INICIALIZADOR FERRAMENTA 3 (CheckList.html) ---
       function initToolPdfImages() {
         const container = document.getElementById('tool-pdf-images');
 
@@ -1015,6 +1011,8 @@
           });
         }
 
+
+
         function addCard(index) {
           const item = elements[index];
           const card = document.createElement('div');
@@ -1050,14 +1048,14 @@
             if (i > 0) doc.addPage();
             let imgW = el.width, imgH = el.height;
             const maxW = a4W - pageMargin * 2;
-            const maxH = a4H - pageMargin * 2 - 60;
+            const maxH = a4H - pageMargin * 2 - 60; 
             const ratio = Math.min(maxW / imgW, maxH / imgH, 1);
             imgW *= ratio; imgH *= ratio;
             const x = (a4W - imgW) / 2;
             const y = pageMargin;
             doc.addImage(el.dataUrl, 'PNG', x, y, imgW, imgH);
             doc.setFontSize(12);
-            doc.setTextColor(50, 50, 50); // Nota: Isso ainda usa um tema claro para o *interior* do PDF
+            doc.setTextColor(50, 50, 50); 
             const lines = doc.splitTextToSize(el.caption || '', a4W - pageMargin * 2);
             doc.text(lines, pageMargin, y + imgH + 25);
           });
@@ -1066,7 +1064,7 @@
         });
       }
 
-      // --- INICIALIZAÇÃO DO HUB (Original) ---
+      // --- INICIALIZAÇÃO DO HUB ---
       switchTool('tool-merge-pdf');
       
     })();
